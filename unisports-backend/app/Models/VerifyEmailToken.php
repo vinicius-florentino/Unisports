@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class VerifyEmailToken extends Model
+{
+    protected $primaryKey = 'user_id';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'user_id',
+        'token',
+        'expires_at',
+    ];
+
+    protected $hidden = [
+        'token',
+    ];
+
+    protected $casts = [
+        'expires_at' => 'timestamp',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }    
+}

@@ -1,0 +1,8 @@
+.pac-container, .pac-item{
+    z-index: 2147483647 !important;
+ }
+
+ .fullscreen-pac-container[style]{
+    z-index: 2547483647 !important;
+    top:50px !important;
+  }
